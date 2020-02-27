@@ -3,7 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modern-tech", "modern-tech\modern-tech.csproj", "{DBBA244A-2281-4489-876B-BE80C0E8F229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modern-tech-tests", "modern-tech-tests\modern-tech-tests.csproj", "{BCF769CC-DCEA-4632-860C-87FF06C16369}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A72DF14-DE0C-4267-BECF-F92B5B1B3C20}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBBA244A-2281-4489-876B-BE80C0E8F229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBA244A-2281-4489-876B-BE80C0E8F229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBA244A-2281-4489-876B-BE80C0E8F229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBA244A-2281-4489-876B-BE80C0E8F229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF769CC-DCEA-4632-860C-87FF06C16369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF769CC-DCEA-4632-860C-87FF06C16369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF769CC-DCEA-4632-860C-87FF06C16369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF769CC-DCEA-4632-860C-87FF06C16369}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
