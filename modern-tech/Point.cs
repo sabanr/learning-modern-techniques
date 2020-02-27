@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace modern_tech
 {
@@ -45,9 +46,17 @@ namespace modern_tech
         }
 
         public override int GetHashCode() {
-            var mc = 11;
+            unchecked
+            {
+                // Choose large primes to avoid hashing collisions
+                const int hashingBase = (int) 2166136261;
+                const int hashingMultiplier = 16777619;
 
-            return mc * X.GetHashCode() * Y.GetHashCode();
+                int hash = hashingBase;
+                hash = (hash * hashingMultiplier) ^ X.GetHashCode() ;
+                hash = (hash * hashingMultiplier) ^ Y.GetHashCode();
+                return hash;
+            }
         }
 
         public void SwapCoords() => (X, Y) = (Y, X);

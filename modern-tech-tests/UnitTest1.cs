@@ -1,6 +1,5 @@
 using System;
 
-using Microsoft.VisualStudio.TestPlatform.Common.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using modern_tech;
