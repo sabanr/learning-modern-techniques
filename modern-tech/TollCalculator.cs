@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Net.NetworkInformation;
 
 namespace modern_tech
 {
@@ -81,5 +81,13 @@ namespace modern_tech
                 (true, TimeBand.Overnight, _) => 0.75m,
                 (false, _, _) => 1.00m,
             };
+
+        // DateTime math is hard! Use the methods!
+        public static (DateTime start, DateTime end) GenerateSubscription() {
+            var start = DateTime.Now.Date;
+            var end = start.AddYears(1);
+
+            return (start, end);
+        }
     }
 }
