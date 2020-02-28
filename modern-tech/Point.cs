@@ -1,35 +1,19 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace modern_tech
 {
-    public struct Point{
+    public readonly struct Point{
 
-        private double _x;
-        private double _y;
-        private double? _distance;
+        public double X { get; }
+        public double Y { get; }
 
-        public double X {
-            readonly  get => _x;
-            private set => _x = value;
-        }
-        public double Y {
-            readonly get => _y;
-            private set => _y = value;
-        }
-
-        public readonly double Distance {
-            get {
-                if (!_distance.HasValue)
-                    _distance = Math.Sqrt(X * X + Y * Y);
-
-                return _distance.Value;
-            }
+        public double Distance {
+            get;
         }
 
         // Assign using tuples!
         public Point(double x, double y) => 
-            (this._x, this._y, this._distance) = (x, y, default);
+            (X, Y, Distance) = (x, y, Math.Sqrt(x * x + y * y));
 
         public static bool operator ==(Point left, Point right) => 
             (left.X, left.Y) == (right.X, right.Y);
@@ -37,13 +21,12 @@ namespace modern_tech
         public static bool operator !=(Point left, Point right) => 
            (left.X, left.Y) != (right.X, right.Y);
 
-        public override bool Equals(object obj) {
-            return obj switch {
-                null => false,
-                Point otherPt => (this == otherPt),
-                _ => false
-            };
-        }
+        public override bool Equals(object? obj) => obj switch
+        {
+            null => false,
+            Point otherPt => (this == otherPt),
+            _ => false
+        };
 
         public override int GetHashCode() {
             unchecked
@@ -59,7 +42,7 @@ namespace modern_tech
             }
         }
 
-        public void SwapCoords() => (X, Y) = (Y, X);
+        public Point SwapCoords() => new Point(Y, X);
 
         //public void SwapCoords() {
         //    double tmp = X;
