@@ -3,22 +3,22 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace modern_tech
 {
-    public class Point {
+    public struct Point{
 
         private double _x;
         private double _y;
         private double? _distance;
 
         public double X {
-            get => _x;
+            readonly  get => _x;
             private set => _x = value;
         }
         public double Y {
-            get => _y;
+            readonly get => _y;
             private set => _y = value;
         }
 
-        public double Distance {
+        public readonly double Distance {
             get {
                 if (!_distance.HasValue)
                     _distance = Math.Sqrt(X * X + Y * Y);
