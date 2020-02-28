@@ -73,13 +73,13 @@ namespace modern_tech
 
         public static decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
             (IsWeekDay(timeOfToll), GetTimeBand(timeOfToll), inbound) switch {
-                (true, TimeBand.MorningRush, true) => 2.00m,
-                (true, TimeBand.MorningRush, false) => 1.00m,
-                (true, TimeBand.DayTime, _) => 1.50m,
-                (true, TimeBand.EveningRush, true) => 1.00m,
-                (true, TimeBand.EveningRush, false) => 2.00m,
-                (true, TimeBand.Overnight, _) => 0.75m,
-                (false, _, _) => 1.00m,
+				(true,	TimeBand.MorningRush,	true)		=> 2.00m,
+				(true,	TimeBand.MorningRush,	false)		=> 1.00m,
+                (true,	TimeBand.DayTime,		_)			=> 1.50m,
+                (true,	TimeBand.EveningRush,	true)		=> 1.00m,
+                (true,	TimeBand.EveningRush,	false)		=> 2.00m,
+                (true,	TimeBand.Overnight,		_)			=> 0.75m,
+                (false,	_,						_)			=> 1.00m,
             };
 
         // DateTime math is hard! Use the methods!
